@@ -17,8 +17,8 @@ var tictoe = {};
     var SIZE_OF_FIELD = 3; //TODO брать из аяксов
     //var SQUIRE_SIZE = SQUIRE_DIMENSION * SIZE_OF_FIELD;
 
-    var START_OFFSET_X = 0;//(STAGE_WIDTH - SQUIRE_SIZE)/4;
-    var START_OFFSET_Y = 0;//(STAGE_HEIGHT - SQUIRE_SIZE)/4;
+    var START_OFFSET_X = 50;
+    var START_OFFSET_Y = 50;
 
     var GRID_COLOR = '#848B96';
 
@@ -199,8 +199,8 @@ var tictoe = {};
 
     function getCellNumber(){
         var mousePos = _stage.getPointerPosition();
-        var x = Math.floor(mousePos.x/SQUIRE_DIMENSION) - 1;
-        var y = Math.floor(mousePos.y/SQUIRE_DIMENSION) - 1;
+        var x = Math.floor((mousePos.x -START_OFFSET_X)/SQUIRE_DIMENSION) - 1;
+        var y = Math.floor((mousePos.y - START_OFFSET_Y)/SQUIRE_DIMENSION) - 1;
 
         var z = x*SIZE_OF_FIELD + y;
 
@@ -219,10 +219,11 @@ var tictoe = {};
         for (var i = 0; i < n; i++) {
             for (var j = 0; j < n; j++) {
                 var cell = CellGenerator.getCell(cells[i * n + j], i*n + j + 'cell', null);
-                cell.move({x: i * SQUIRE_DIMENSION + START_OFFSET_X, y: j * SQUIRE_DIMENSION + START_OFFSET_Y});
+                cell.move({x: i * SQUIRE_DIMENSION, y: j * SQUIRE_DIMENSION});
                 _shapesLayer.add(cell);
             }
         }
+        _shapesLayer.move({x: START_OFFSET_X,  y: START_OFFSET_Y });
         _stage.add(_shapesLayer);
     };
 
@@ -573,6 +574,7 @@ var tictoe = {};
 
             // TODO отрефакторить, убрать вообще нафиг параметр whoStep
             // нельзя. Надо же как-то первый ход мониторить. Надо было думать перед тем, как все это городить...
+            // нет можно. Есть же cell=-1
             if(jsondata.yourSide === jsondata.whoStep){
                 _showPlayersStep();
                 playerTimer.startTimer();
@@ -648,6 +650,12 @@ var tictoe = {};
         var callback = function(jsondata){
             if(jsondata.lastStep !== jsondata.yourSide){
                 clearInterval(updateIntervalId);
+
+                // ты ходишь первым, запускаем таймер
+                if(jsondata.cell === -1){
+                    playerTimer.startTimer();
+                }
+
             }
 
             if(jsondata.cell !== -1 /* || !(jsondata.cell === 0 && jsondata.lastCell === 0) */){

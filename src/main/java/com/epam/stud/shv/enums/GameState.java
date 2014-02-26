@@ -10,9 +10,11 @@ package com.epam.stud.shv.enums;
 public enum GameState {
 
     NOT_STARTED(0),
+    FIRST_STEP(5),
     IN_PROCESS(1),
     YOU_WIN(2),
     YOU_LOOSE(3),
+    FRIENDSHIP(6),
     ENEMY_EXIT(4);
 
 

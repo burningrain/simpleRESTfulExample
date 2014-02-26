@@ -103,7 +103,7 @@ public final class GameCash {
         Game game = getGameById(gameId);
 
         // ход можно сделать только в пустое поле
-        if (game.getCells()[cell] == 0) {
+        if (game.getCells()[cell] == 10) {
             game.setLastStep(side);
             game.setLastCell(cell);
 

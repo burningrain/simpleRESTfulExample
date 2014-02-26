@@ -338,11 +338,13 @@ public class GameService {
             step.setWhoStep(game.getCreator().getSide()); // кто сейчас ходит
         } else if (game.getLastStep() == GameConstants.NONE.getNumber() || game.getLastStep() == -1) {
             // никто ещё не ходил
-            int max = GameConstants.CROSS_PLAYER.getNumber();
-            int min = GameConstants.ZERO_PLAYER.getNumber();
-            int randomNum = getRandomNumber(max, min);
 
-            step.setWhoStep((randomNum == max) ? max : min);
+            // для случайного выбора кто начинает: крестики или нолики
+//            int max = GameConstants.CROSS_PLAYER.getNumber();
+//            int min = GameConstants.ZERO_PLAYER.getNumber();
+//            int randomNum = getRandomNumber(max, min);
+//            step.setWhoStep((randomNum == max) ? max : min);
+            step.setWhoStep(GameConstants.ZERO_PLAYER.getNumber());
             game.setLastStep(step.getWhoStep());
             game.setLastCell(-1);
         }

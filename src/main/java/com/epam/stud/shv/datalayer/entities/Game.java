@@ -39,6 +39,9 @@ public class Game {
         this.id = id;
         this.creator = creator;
         cells = new int[n*n];
+        for(int i = 0; i < cells.length; i++){
+            cells[i]= 10;
+        }
     }
 
 
