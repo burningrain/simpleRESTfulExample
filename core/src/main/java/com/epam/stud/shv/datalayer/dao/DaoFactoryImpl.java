@@ -13,7 +13,7 @@ public final class DaoFactoryImpl extends DaoFactory {
 
 
     private void DaoFactoryImpl(){
-        //TODO
+        // this is singleton
     }
 
 

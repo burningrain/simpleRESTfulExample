@@ -1,8 +1,9 @@
 package com.epam.stud.shv.datalayer.dao;
 
+
 import com.epam.stud.shv.datalayer.cash.GameCash;
-import com.epam.stud.shv.datalayer.entities.Game;
-import com.epam.stud.shv.datalayer.entities.User;
+import com.epam.stud.shv.datalayer.datalayer.entities.Game;
+import com.epam.stud.shv.datalayer.datalayer.entities.User;
 import com.epam.stud.shv.enums.GameConstants;
 
 import java.util.List;

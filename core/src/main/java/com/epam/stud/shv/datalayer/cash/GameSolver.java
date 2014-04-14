@@ -1,7 +1,7 @@
 package com.epam.stud.shv.datalayer.cash;
 
+
 import com.epam.stud.shv.enums.GameConstants;
-import com.epam.stud.shv.enums.GameState;
 
 /**
  * Created with IntelliJ IDEA.

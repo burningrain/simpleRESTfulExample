@@ -2,8 +2,9 @@ package com.epam.stud.shv.web;
 
 import com.epam.stud.shv.datalayer.dao.DaoFactory;
 import com.epam.stud.shv.datalayer.dao.GameDao;
-import com.epam.stud.shv.datalayer.entities.Game;
-import com.epam.stud.shv.datalayer.entities.User;
+
+import com.epam.stud.shv.datalayer.datalayer.entities.Game;
+import com.epam.stud.shv.datalayer.datalayer.entities.User;
 import com.epam.stud.shv.enums.GameConstants;
 import com.epam.stud.shv.enums.GameState;
 import com.epam.stud.shv.json.GameStep;

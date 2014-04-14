@@ -1,6 +1,4 @@
-package com.epam.stud.shv.datalayer.entities;
-
-import java.util.List;
+package com.epam.stud.shv.datalayer.datalayer.entities;
 
 /**
  * Created with IntelliJ IDEA.

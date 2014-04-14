@@ -1,4 +1,4 @@
-package com.epam.stud.shv.datalayer.entities;
+package com.epam.stud.shv.datalayer.datalayer.entities;
 
 import java.util.Date;
 
